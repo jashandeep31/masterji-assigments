@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.batches {
+  border-collapse: separate;
+  border-spacing: 0px;
+}
+
+.batches th {
+  border-right: 1px solid #dfdfdf;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.batches td {
+  border-bottom: 1px solid #dfdfdf;
+  border-left: 1px solid #dfdfdf;
+}
+
+.batches tr td:last-child {
+  border-right: 1px solid #dfdfdf;
+}
+.batches th:first-child {
+  border-top-left-radius: 10px;
+  border-left: 1px solid black;
+}
+
+.batches th:last-child {
+  border-top-right-radius: 10px;
+  border-right: 1px solid black;
+}
+
+.batches tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+.batches tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
