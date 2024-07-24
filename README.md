@@ -13,6 +13,6 @@ npm run dev
 ```
 
 Preview
-![OTP Page](https://github.com/jashandeep31/masterji-assigments/assignment1/01.png)
-![Course List ](https://github.com/jashandeep31/masterji-assigments/assignment1/02.png)
-![Batches](https://github.com/jashandeep31/masterji-assigments/assignment1/03.png)
+![OTP Page](https://github.com/jashandeep31/masterji-assigments/blob/main/assignment1/01.png)
+![Course List ](https://github.com/jashandeep31/masterji-assigments/blob/main/assignment1/02.png)
+![Batches](https://github.com/jashandeep31/masterji-assigments/blob/main/assignment1/03.png)
