@@ -21,7 +21,13 @@ const CourseListPage = () => {
     [coursesList]
   );
 
-  // const deleteCourseItem = useCallback((index: number) => {});
+  const deleteCourseItem = (name: string) => {
+    console.log(name);
+    setcoursesList((courses) => {
+      const newCourses = courses;
+      return newCourses.filter((course) => course.name !== name);
+    });
+  };
 
   return (
     <div className="min-h-screen bg-[#D2E3C8] flex items-center justify-center">
@@ -35,13 +41,14 @@ const CourseListPage = () => {
             Change orders of the products based on priority
           </p>
           <DndProvider backend={HTML5Backend}>
-            <div className="overflow-auto ">
+            <div className="md:overflow-visible  overflow-auto">
               <div className="grid gap-3 mt-4 ">
                 {coursesList.map((course, index) => (
                   <CourseComponent
                     index={index}
                     course={course}
                     key={index}
+                    deleteCourseItem={deleteCourseItem}
                     moveCourseItem={moveCourseItem}
                   />
                 ))}

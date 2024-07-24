@@ -14,10 +14,12 @@ const CourseComponent = ({
   course,
   index,
   moveCourseItem,
+  deleteCourseItem,
 }: {
   course: ICourse;
   index: number;
   moveCourseItem: (dragIndex: number, hoverIndex: number) => void;
+  deleteCourseItem: (name: string) => void;
 }) => {
   const [menuActive, setMenuActive] = useState<boolean>(false);
   const [{ isDragging }, dragRef] = useDrag({
@@ -92,26 +94,37 @@ const CourseComponent = ({
             <i className="bx bx-dots-vertical-rounded"></i>
           </button>
           {menuActive ? (
-            <div className="border rounded p-2  absolute bg-white z-10 left-[100%] min-w-24 flex flex-col items-center">
+            <div className="border rounded p-2  absolute bg-white z-10 min-w-28 flex flex-col items-center gap-1">
               <button
-                className="text-sm"
+                className="text-sm lex items-center gap-1"
                 onClick={() => {
                   setMenuActive(false);
                   index - 1 > 0 ? moveCourseItem(index, index - 1) : null;
                 }}
               >
+                <i className="bx bx-up-arrow-alt"></i>
                 Move Up
               </button>
               <button
-                className="text-sm"
+                className="text-sm lex items-center gap-1"
                 onClick={() => {
                   moveCourseItem(index, index + 1);
                   setMenuActive(false);
                 }}
               >
+                <i className="bx bx-down-arrow-alt"></i>
                 Move Down
               </button>
-              <button className="text-sm"> Remove</button>
+              <button
+                className="text-sm flex items-center gap-1 text-red-500 "
+                onClick={() => {
+                  deleteCourseItem(course.name);
+                  setMenuActive(false);
+                }}
+              >
+                {" "}
+                <i className="bx bx-trash-alt"></i> Remove
+              </button>
             </div>
           ) : null}
         </div>
